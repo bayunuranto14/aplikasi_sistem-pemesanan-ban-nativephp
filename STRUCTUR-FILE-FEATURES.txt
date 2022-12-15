@@ -1,0 +1,16 @@
+FITURE APLIKASI (admin)
+- produk -> form tambah produk, {table produk (edit, delete)}
+- pemesanan -> produk.{select}
+- daftar pesanan 
+- sign out
+
+# pemesanan (user):
+- nama_pemesan
+- email_pemesan
+- nama_produk
+- merk
+- qty
+- no_telp
+- alamat
+
+#vendor
