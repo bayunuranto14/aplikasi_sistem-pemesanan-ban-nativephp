@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 02:21 PM
+-- Generation Time: Dec 17, 2022 at 07:19 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `admin` (
   `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `alamat`) VALUES
+(1, 'Administrator', 'admin', 'admin', 'Jakarta'),
+(2, 'Bayu Afif Nuranto', 'bayunuranto', '123456', 'Jl. Rawa Jaya, Jakarta');
+
 -- --------------------------------------------------------
 
 --
@@ -44,11 +52,13 @@ CREATE TABLE `admin` (
 CREATE TABLE `pemesanan` (
   `id_pemesanan` int(15) NOT NULL,
   `nama_pemesan` varchar(255) NOT NULL,
+  `email_pemesan` varchar(255) NOT NULL,
   `nama_produk` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
   `deskripsi` text NOT NULL,
   `merk` varchar(255) NOT NULL,
   `no_telp` varchar(255) NOT NULL,
-  `alanat` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
   `tgl_pemesanan` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -61,13 +71,24 @@ CREATE TABLE `pemesanan` (
 CREATE TABLE `produk` (
   `id_produk` int(15) NOT NULL,
   `nama_produk` varchar(255) NOT NULL,
-  `qty` int(255) NOT NULL,
   `harga` int(255) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
   `merk` varchar(255) NOT NULL,
   `jumlah_stok` int(255) NOT NULL,
   `gambar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `produk`
+--
+
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `deskripsi`, `merk`, `jumlah_stok`, `gambar`) VALUES
+(1, 'Tester', 500000, 'lorem ipsum sadfioneswfiohfeiowfhiowefhioewfhiop', 'MAXXISS', 150, ''),
+(6, 'oketestlagi', 400000, 'nfdjnjfnklofn', 'apa', 121, ''),
+(8, 'apaaja', 123456, 'dskgklswhngklewhgiopwhgopeswjng', 'ok', 80, ''),
+(9, 'efgewgewgew', 2147483647, 'dklsnfkldsnklneklw', 'hkofhnewkofbnioqw', 2949289, ''),
+(12, 'testlagi1', 400000, 'adsfds', 'swefew', 123, 'localpride.jpg'),
+(13, 'testlagi12', 400000, 'svsd', 'qwqw', 1212, 'localpride.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,7 +99,6 @@ CREATE TABLE `produk` (
 CREATE TABLE `vendor` (
   `id_vendor` int(15) NOT NULL,
   `nama_vendor` varchar(255) NOT NULL,
-  `qty` int(255) NOT NULL,
   `alamat_vendor` varchar(255) NOT NULL,
   `no_telp` text NOT NULL,
   `jumlah_stok` int(255) NOT NULL
@@ -114,7 +134,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`
@@ -126,7 +146,7 @@ ALTER TABLE `pemesanan`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produk` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
