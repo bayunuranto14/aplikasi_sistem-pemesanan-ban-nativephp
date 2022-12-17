@@ -1,5 +1,12 @@
 <?php
 session_start();
+include './src/koneksi.php';
+if (mysqli_connect_errno()) {
+    echo "Koneksi database Gagal!" . mysqli_connect_error();
+}
+?>
+
+<?php
 
 ?>
 
@@ -11,12 +18,14 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Index</title>
+    <title>Aplikasi Sistem Penjualan Ban</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/dark-mode.css">
+    <link rel="stylesheet" href="./assets/css/produk.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
 </head>
 
@@ -27,21 +36,10 @@ session_start();
                 Hans Ban
             </h3>
             <nav class="nav my-auto justify-content-center">
-                <li><a data-scroll href="#home" class="nav-link font-bold">Home</a></li>
+                <li><a data-scroll href="#" class="nav-link font-bold">Home</a></li>
                 <li><a data-scroll href="#about" class="nav-link font-bold">About</a></li>
                 <li><a data-scroll href="#contact" class="nav-link font-bold">Contact</a></li>
-                <li><a data-scroll href="./src/pages/login.php" class="nav-link font-bold">Login</a></li>
-
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link font-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Login
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item hover:bg-cyan-400 hover:text-white font-semibold" href="./src/pages/login.php">Login</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item hover:bg-green-600 hover:text-white font-semibold" href="#">Register</a>
-                    </div> -->
-                </li>
+                <li><a data-scroll href="./src/login.php" class="nav-link font-bold">Login</a></li>
 
                 <div class="flex mr-4 ml-4">
                     <input type="search" id="form1" class="form-control" />
@@ -61,6 +59,8 @@ session_start();
                 </div>
             </nav>
         </header>
+
+
         <div class="container rounded-lg mb-4">
             <ul class="nav sticky rounded-lg bg-cyan-500 text-light hover:bg-orange-700 hover:text-orange-500 font-semibold text-xl justify-content-center">
                 <p>
@@ -77,8 +77,7 @@ session_start();
 
                 <div class=" bg-no-repeat bg-gradient-to-t bg-center shadow-lg text-light">
                     <div class="container-fluid">
-                        <!-- <h1 class="text-5xl font-bold font-weight-bold">Toko Hans Ban</h1>
-                        <p class="lead text-yellow-500">Ban itu harus hitam !</p> -->
+
                         <div id="carouselExampleControls" class="carousel slide rounded" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -104,11 +103,11 @@ session_start();
 
                         <div id="about" class="container-fluid mb-4 py-4 pt-4 py-0 p-1 rounded-xl">
                             <div class=" btn-group-justified" role="group" aria-label="Basic example">
-                                <a href="#" target="_blank">
+                                <a href="#home" target="_blank">
                                     <button type="button" class="btn btn-lg bg-blue-600 mr-3 mt-4 text-white font-semibold">
                                         BROWSE
                                     </button></a>
-                                <a href="#" target="_blank">
+                                <a href="./src/index.php">
                                     <button type="button" class="btn btn-lg bg-success mr-3 text-white mt-4 font-semibold">
                                         PRODUCT CATALOG
                                     </button></a>
@@ -198,31 +197,33 @@ session_start();
                     </div>
             </div>
             </section>
+        </main>
 
+        <body>
             <footer>
                 <div class="container my-4">
                     <h1 class="text-center text-lead text-2xl">2022 | Hans Ban</h1>
                 </div>
             </footer>
-        </main>
+            </main>
 
-        <script>
-            var scroll = new SmoothScroll('a[href*="#"]', {
-                speed: 10,
-                speedAsDuration: true
-            });
-        </script>
+            <script>
+                var scroll = new SmoothScroll('a[href*="#"]', {
+                    speed: 10,
+                    speedAsDuration: true
+                });
+            </script>
 
-        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js">
-        </script>
+            <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js">
+            </script>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
-        <script src="./assets/js/dark-mode-switch.min.js"></script>
-</body>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+            </script>
+            <script src="./assets/js/dark-mode-switch.js"></script>
+        </body>
 
 </html>

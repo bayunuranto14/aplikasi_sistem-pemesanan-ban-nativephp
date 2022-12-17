@@ -2,7 +2,7 @@
 session_start();
 include './koneksi.php';
 
-include_once('./layouts/topbar.php');
+include_once('../layouts/topbar.php');
 // include_once('./layouts/config.php');
 ?>
 <div class="container">
@@ -35,7 +35,7 @@ include_once('./layouts/topbar.php');
         if (isset($_POST['login'])) {
           $username = $_POST['username'];
           $password = $_POST['password'];
-          $ambil = $koneksi->query(("SELECT * FROM admin where username='$username' and password='$password'"));
+          $ambil = $koneksi->query("SELECT * FROM admin where username='$_POST[username]' and password='$_POST[password]'");
 
           $validasi = $ambil->num_rows;
 
@@ -54,6 +54,6 @@ include_once('./layouts/topbar.php');
     </div>
   </div>
   <?php
-  include('./layouts/footer.php')
+  include('../layouts/footer.php')
   ?>
   </section>
