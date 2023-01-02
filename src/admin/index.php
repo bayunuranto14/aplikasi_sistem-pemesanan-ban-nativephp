@@ -1,6 +1,7 @@
 <?php include('./topbar.php') ?>
 <?php include('./sidebar.php'); ?>
 
+
 <div class="hold-transition sidebar-mini">
   <div class="content-wrapper">
     <section class="content-header">
@@ -15,11 +16,14 @@
             include 'ubah_produk.php';
           } elseif ($_GET['halaman'] === "hapus_produk") {
             include 'hapus_produk.php';
+          } elseif ($_GET['halaman'] === "pesanan") {
+            include 'pesanan.php';
           } elseif ($_GET['halaman'] === "logout") {
             include 'logout.php';
           } else {
             include 'home.php';
           }
+          
         }
         ?>
       </section>

@@ -51,7 +51,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">PRODUCTS</li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
@@ -64,7 +64,7 @@
                         <li class="nav-item">
                             <a href="index.php?halaman=produk" class="nav-link">
                                 <i class="far fa-plus-square nav-icon"></i>
-                                <p>Lihat Data Produk</p>
+                                <p>Data Produk</p>
                             </a>
                         </li>
                     </ul>
@@ -78,24 +78,23 @@
                     </ul>
 
                 </li>
-                <li class="nav-header">PEMESANAN</li>
+
                 <li class="nav-item">
-                    <a href="./calendar.html" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
+                    <a href="index.php?halaman=pesanan" class="nav-link">
+                        <i class="nav-icon fas fa-envelope"></i>
                         <p>
                             Pemesanan
-                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-header">MISCELLANEOUS</li>
+                <!-- <li class="nav-header">MISCELLANEOUS</li>
                 <li class="nav-item">
                     <a href="https://adminlte.io/docs/3.1/" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Documentation</p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="./logout.php" class="nav-link">
                         <i class="nav-icon fa fa-sign-out"></i>

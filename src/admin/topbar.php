@@ -25,10 +25,13 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
+            <a href="./index.php?halaman=home" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="index.php?halaman=produk" class="nav-link">Produk</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?halaman=pesanan" class="nav-link">Pemesanan</a>
         </li>
     </ul>
 
@@ -66,14 +69,13 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="/assets/img/logo.gif" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                        <img src="../assets/logo.gif" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Administrator
                                 <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                             </h3>
                             <p class="text-sm">Selamat Datang di Aplikasi Sistem Penjualan Ban</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>Baru Saja</p>
                         </div>
                     </div>
                     <!-- Message End -->

@@ -1,22 +1,13 @@
 <?php
-
-use LDAP\Result;
-
 include './koneksi.php';
-
 ?>
 
 
-<?php
-include './koneksi.php';
-include './nav-brand.php';
-?>
 <div class="container">
-    <div class="d-flex justify-content-between"><?php include './list-brand.php'; ?></div>
+    <?php include './nav-brand.php'; ?>
+    <div class="d-flex justify-content-between"></div>
     <?php
-    include './koneksi.php';
-
-    $getproduk = $koneksi->query("SELECT * FROM produk order by id_produk ASC"); ?>
+    $getproduk = $koneksi->query("SELECT * from produk where merk like 'FDR'"); ?>
     <div class="row justify-content-center">
         <?php while ($produk = $getproduk->fetch_assoc()) { ?>
             <div class="card-group">
@@ -39,16 +30,3 @@ include './nav-brand.php';
         <?php } ?>
     </div>
 </div>
-
-<style>
-    .card-group {
-        gap: 10px;
-    }
-
-    .card-title {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-</style>

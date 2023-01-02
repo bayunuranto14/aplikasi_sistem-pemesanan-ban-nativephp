@@ -16,11 +16,11 @@
             </div>
             <div class="form-group">
                 <label class="float-left" for="">Masukkan Email Anda :</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email">
+                <input type="email" class="form-control" id="email" aria-describedby="email" required>
             </div>
             <div class="form-group">
                 <label class="float-left" for="">Nama Produk :</label>
-                <input type="text" class="form-control" id="message">
+                <input type="text" class="form-control" id="message" required>
             </div>
             <div class="form-group">
                 <label class="float-left" for="">Merk :</label><br>
@@ -41,11 +41,19 @@
             </div>
             <div class="form-group">
                 <label class="float-left" for="">Quantity / Jumlah :</label>
-                <input type="number" class="form-control" id="message">
+                <input type="number" class="form-control" id="message" required>
             </div>
             <div class="form-group">
                 <label class="float-left" for="">No Telp :</label>
-                <input type="number" class="form-control" id="message">
+                <input type="number" class="form-control" id="message" required>
+            </div>
+            <div class="form-group">
+                <label class="float-left" for="">Alamat :</label>
+                <input type="text" class="form-control" id="message" required>
+            </div>
+            <div class="form-group">
+                <label class="float-left" for="">Tanggal Pemesanan :</label>
+                <input type="date" name="date" placeholder="yyy-mm-dd" value="" min="1997-01-01" max="2030-12-31" class="form-control" id="message" required>
             </div>
             <div class="form-group">
                 <input type="submit" class="text-white btn bg-blue-500 hover:bg-blue-800"></input>

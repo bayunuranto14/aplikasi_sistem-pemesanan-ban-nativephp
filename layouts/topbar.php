@@ -29,6 +29,7 @@
             </h3>
             <nav class="nav my-auto justify-content-center">
                 <li><a data-scroll href="../index.php" class="nav-link font-bold">Home</a></li>
+                <li><a data-scroll href="./index.php?halaman=produk_katalog" class="nav-link font-bold">Products</a></li>
                 <li><a data-scroll href="../index.php" class="nav-link font-bold">About</a></li>
                 <li><a data-scroll href="../index.php" class="nav-link font-bold">Contact</a></li>
                 <li><a data-scroll href="#" class="nav-link font-bold">Login</a></li>

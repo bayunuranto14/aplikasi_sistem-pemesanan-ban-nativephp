@@ -9,11 +9,11 @@
             <input type="text" class="form-control" name="nama_produk">
         </div>
         <div class="form-group">
-            <label for="Nama">Harga (Rp)</label>
+            <label for="Harga">Harga (Rp)</label>
             <input type="number" class="form-control" name="harga">
         </div>
         <div class="form-group">
-            <label for="merk">Merk</label>
+            <label for="Merk">Merk</label>
             <input type="text" class="form-control" name="merk">
         </div>
         <div class="form-group">
@@ -38,7 +38,7 @@ if (isset($_POST['save'])) {
     $nama = $_FILES['gambar']['name'];
     $locate = $_FILES['gambar']['tmp_name'];
     // Simpan Gambar
-    move_uploaded_file($locate, "./foto_produk" . $nama);
+    move_uploaded_file($locate, "./foto_produk/" . $nama);
     $koneksi->query("INSERT INTO produk(nama_produk, harga, merk, jumlah_stok, deskripsi, gambar) VALUES('$_POST[nama_produk]', '$_POST[harga]', '$_POST[merk]', '$_POST[jumlah_stok]', '$_POST[deskripsi]','$nama')");
 
     echo "<br><div class='alert alert-success text-center'> Data berhasil disimpan! </div>";

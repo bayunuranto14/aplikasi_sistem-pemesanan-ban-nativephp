@@ -25,9 +25,10 @@
             </h3>
             <nav class="nav my-auto justify-content-center">
                 <li><a data-scroll href="../index.php" class="nav-link font-bold">Home</a></li>
+                <li><a data-scroll href="./index.php?halaman=produk_katalog" class="nav-link font-bold">Products</a></li>
                 <li><a data-scroll href="../index.php" class="nav-link font-bold">About</a></li>
                 <li><a data-scroll href="../index.php" class="nav-link font-bold">Contact</a></li>
-                <li><a data-scroll href="#" class="nav-link font-bold">Login</a></li>
+                <li><a data-scroll href="./login.php" class="nav-link font-bold">Login</a></li>
 
                 <div class="flex mr-4 ml-4">
                     <input type="search" id="form1" class="form-control" />
@@ -49,13 +50,7 @@
         </header>
 
         <div class="container">
-            <div class=" bg-light d-flex nav-link navbar-brand text-center">
-                <a class="nav-link active" href="index.php">HOME</a>
-                <a class="nav-link" href="index.php?halaman=daftar_merk">DAFTAR MERK</a>
-                <br />
-                <a class="nav-link" href="index.php?halaman=produk_katalog">PRODUCT KATALOG</a>
-                <a class="nav-link" href="index.php?halaman=pemesanan">PEMESANAN</a>
-            </div>
+
 
             <div class="hold-transition sidebar-mini">
                 <div class="content-wrapper">
@@ -82,5 +77,35 @@
                     </section>
                 </div>
 
+
+                <section class="content-header">
+
+                    <?php
+                    if (isset($_GET['merk'])) {
+                        if ($_GET['merk'] == "michelin") {
+                            include './michelin.php';
+                        } elseif ($_GET['merk'] === "corsa") {
+                            include './corsa.php';
+                        } elseif ($_GET['merk'] === "IRC") {
+                            include './irc.php';
+                        } elseif ($_GET['merk'] === "pirelli") {
+                            include './pirelli.php';
+                        } elseif ($_GET['merk'] === "maxxis") {
+                            include './maxxis.php';
+                        } elseif ($_GET['merk'] === "fdr") {
+                            include './fdr.php';
+                        } elseif ($_GET['merk'] === "aspira") {
+                            include './aspira.php';
+                        } elseif ($_GET['merk'] === "metzeller") {
+                            include './metzeller.php';
+                        } elseif ($_GET['merk'] === "swallow") {
+                            include './swallow.php';
+                        } else {
+                            // include 'list-brand.php';
+                        }
+                    }
+                    ?>
+
+                </section>
 
                 <?php include '../layouts/footer.php' ?>

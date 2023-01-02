@@ -1,73 +1,109 @@
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+<?php
+include './koneksi.php';
 
-<h1 class="text-3xl mb-4 font-bold text-center">
-    DAFTAR MERK
-</h1>
-<div class="container align-content-center">
+$query = mysqli_query($koneksi, "SELECT distinct merk FROM produk");
+$result = mysqli_fetch_array($query);
+?>
+
+
+<section class="content-header">
+
+    <?php
+    if (isset($_GET['merk'])) {
+        if ($_GET['merk'] == "michelin") {
+            include 'michelin.php';
+        } elseif ($_GET['merk'] === "corsa") {
+            include 'corsa.php';
+        } elseif ($_GET['merk'] === "maxxis") {
+            include 'maxxis';
+        } elseif ($_GET['merk'] === "IRC") {
+            include './irc.php';
+        } elseif ($_GET['merk'] === "pirelli") {
+            include './pirelli.php';
+        } elseif ($_GET['merk'] === "fdr") {
+            // include 'logout.php';
+        } elseif ($_GET['merk'] === "aspira") {
+            // include 'logout.php';
+        } elseif ($_GET['merk'] === "metzeller") {
+            include './metzeller.php';
+        } elseif ($_GET['merk'] === "swallow") {
+            // include 'logout.php';
+        } else {
+            include 'list-brand.php';
+        }
+    }
+    ?>
+
+</section>
+
+
+<!-- 
+<div class="container mt-4 align-content-center">
     <div class="row align-self-center">
         <div class="col-md-2 col-sm-4">
             <div class="card card-block">
                 <a href="test.php"><img src="./assets/picture-brand/brand-1.png" alt="Photo of sunset"></a>
             </div>
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-2.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-2.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-3.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-3.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-4.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-4.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-5.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-5.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-6.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-6.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-7.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-7.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-8.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-8.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-9.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-9.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-10.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-10.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-2.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-2.png" alt="Photo of sunset">
         </div>
-        <div class="col-md-2 col-sm-4">
-            <div class="card card-block">
-                <img src="./assets/picture-brand/brand-7.png" alt="Photo of sunset">
-            </div>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <div class="card card-block">
+            <img src="./assets/picture-brand/brand-7.png" alt="Photo of sunset">
         </div>
     </div>
 </div>
-</div>
+</div> -->
+
 
 <style>
     */ div [class^="col-"] {
