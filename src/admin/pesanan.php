@@ -1,6 +1,5 @@
 <div class="container">
     <h2 class="text-center">Data Pemesanan</h2>
-    <a class="mb-4 p-2 btn badge nav-link navbar-dark text-light text-left" href="#">Hapus Semua Data Pesanan</a>
     <div class="card">
         <div class="card-body table-responsive p-0">
             <table class="table table-striped table-valign-middle">
@@ -10,8 +9,7 @@
                         <th> Nama Pemesan </th>
                         <th> Email Pemesan </th>
                         <th> Nama Produk </th>
-                        <th> Merk </th>
-                        <th> Quantity </th>
+                        <th> Jumlah / QTY</th>
                         <th> No. Telp </th>
                         <th> Alamat </th>
                         <th> Tanggal Pemesanan </th>
@@ -29,17 +27,18 @@
                             <td><?php echo $datas['nama_pemesan']; ?></td>
                             <td><?php echo $datas['email_pemesan'] ?></td>
                             <td><?php echo $datas['nama_produk'] ?></td>
-                            <td><?php echo $datas['merk'] ?></td>
                             <td><?php echo $datas['qty'] ?></td>
                             <td><?php echo $datas['no_telp'] ?></td>
                             <td><?php echo $datas['alamat'] ?></td>
                             <td><?php echo $datas['tgl_pemesanan'] ?></td>
                             <td><button class="btn badge btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</button>
                                 <button class="btn badge btn btn-danger"><i class="fa fa-envelope"></i> Email</button>
-                                <button class="btn badge btn-primary"> Hapus Pesanan</button>
+                                <a href="index.php?halaman=hapus_pemesanan&id=<?php echo $datas['id_pemesanan'] ?>" onclick="return confirm('apakah anda yakin menghapus data ini ? ')" class="btn badge btn-warning">Hapus</a>
+
                             </td>
 
                         </tr>
+                        <?php $nomor++; ?>
                     <?php } ?>
                 </tbody>
             </table>

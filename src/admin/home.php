@@ -1,5 +1,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<h1 class="text-center">Selamat Datang Administrator</h1>
+<?php
+include '../koneksi.php';
+?>
+
 <!-- <pre><?php print_r($_SESSION); ?></pre> -->
 <div class="container mb-4 mt-4">
     <!-- <div class="col-sm-6">

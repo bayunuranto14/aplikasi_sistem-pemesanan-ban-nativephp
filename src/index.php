@@ -49,8 +49,8 @@
             </nav>
         </header>
 
-        <div class="container">
 
+        <div class="container">
 
             <div class="hold-transition sidebar-mini">
                 <div class="content-wrapper">
@@ -107,5 +107,7 @@
                     ?>
 
                 </section>
+
+                <?php header("location:../index.php") ?>
 
                 <?php include '../layouts/footer.php' ?>

@@ -16,6 +16,10 @@
             include 'ubah_produk.php';
           } elseif ($_GET['halaman'] === "hapus_produk") {
             include 'hapus_produk.php';
+          } elseif ($_GET['halaman'] === "pemesanan") {
+            include 'pesanan.php';
+          } elseif ($_GET['halaman'] === "hapus_pemesanan") {
+            include 'hapus_pemesanan.php';
           } elseif ($_GET['halaman'] === "pesanan") {
             include 'pesanan.php';
           } elseif ($_GET['halaman'] === "logout") {
@@ -23,7 +27,6 @@
           } else {
             include 'home.php';
           }
-          
         }
         ?>
       </section>

@@ -33,8 +33,8 @@ $result = mysqli_fetch_array($query);
                 <?php echo $result['deskripsi'] ?>
             </p>
             <div class="m-4">
-                <a href="index.php?halaman=pemesanan" class="justify-content-center mt-4 btn btn-lg btn-primary">PESAN</a>
-                <a href="index.php?halaman=produk_katalog" class="text-dark justify-content-center mt-4 btn btn-lg btn-warning">Kembali Ke Produk Katalog</a>
+                <a class="justify-content-center mt-4 btn btn-lg btn-primary" href="detail_order.php?id_produk=<?= $result['id_produk']; ?>">PESAN</a>
+                <a href=" index.php?halaman=produk_katalog" class="text-dark justify-content-center mt-4 btn btn-lg btn-warning">Kembali Ke Produk Katalog</a>
             </div>
         </div>
     </div>
