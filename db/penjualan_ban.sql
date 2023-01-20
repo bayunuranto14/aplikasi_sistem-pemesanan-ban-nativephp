@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 06:40 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Waktu pembuatan: 20 Jan 2023 pada 18.51
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,17 +36,19 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_admin`, `username`, `password`, `alamat`) VALUES
 (1, 'Administrator', 'admin', 'admin', 'Jakarta'),
-(2, 'Bayu Afif Nuranto', 'bayunuranto', '123456', 'Jl. Rawa Jaya, Jakarta');
+(2, 'Bayu Afif Nuranto', 'bayunuranto', '123456', 'Jl. Rawa Jaya, Jakarta'),
+(3, 'Imam Fadhilah Rahman', 'imam', '123456', 'Cakung, Jakarta Timur'),
+(4, 'Raihan Syah Putra Nasution', 'raihan', '123456', 'Bekasi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan`
+-- Struktur dari tabel `pemesanan`
 --
 
 CREATE TABLE `pemesanan` (
@@ -55,17 +57,22 @@ CREATE TABLE `pemesanan` (
   `email_pemesan` varchar(255) NOT NULL,
   `nama_produk` varchar(255) NOT NULL,
   `qty` int(11) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `merk` varchar(255) NOT NULL,
   `no_telp` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `tgl_pemesanan` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`id_pemesanan`, `nama_pemesan`, `email_pemesan`, `nama_produk`, `qty`, `no_telp`, `alamat`, `tgl_pemesanan`) VALUES
+(1, 'Bayu Afif Nuranto', 'bayunuranto@gmail.com', 'MICHELIN CITY GRIP PRO 80/90-14', 2, '081215430175', 'Jl. Rawa Jaya', '2023-01-04 11:36:41');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -79,7 +86,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `deskripsi`, `merk`, `jumlah_stok`, `gambar`) VALUES
@@ -118,66 +125,51 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `deskripsi`, `merk`, 
 (33, 'FDR GENZI PRO 100/80-17', 388000, 'Indikator keausan ban progresif yang  memberi peringatan dini', 'FDR', 100, 'fdr-4.jpg'),
 (34, 'ASPIRA PREMIO SPORTIVO 150/60-17 R', 781000, 'Memberikan pengalaman berkendara yang luar biasa dengan ban yang sporty ketika melakukan manuver dan perjalanan jarak jauh di segala cuaca.', 'ASPIRA', 100, 'aspira-4.jpg'),
 (35, 'METZELLER SPORTEC M5 INTERACT 120/60-17', 1294000, 'Performa tinggi dan keamanan saat basah', 'METZELLER', 100, '	metzeller-4.jpg'),
-(36, 'SWALLOW SB115 SEAHAWK 80/90-17', 221000, 'Memiliki daya cengkeram yang baik sehingga tetap stabil saat terjadi pengereman mendadak', 'SWALLOW', 100, 'swallow-4.jpg'),
-(37, 'test', 898908908, 'bslbklsgkbsgkbeksbgklesb', 'gbklbgelw', 9379739, 'IMG-20191105-WA0010.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `vendor`
---
-
-CREATE TABLE `vendor` (
-  `id_vendor` int(15) NOT NULL,
-  `nama_vendor` varchar(255) NOT NULL,
-  `alamat_vendor` varchar(255) NOT NULL,
-  `no_telp` text NOT NULL,
-  `jumlah_stok` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(36, 'SWALLOW SB115 SEAHAWK 80/90-17', 221000, 'Memiliki daya cengkeram yang baik sehingga tetap stabil saat terjadi pengereman mendadak', 'SWALLOW', 100, 'swallow-4.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `pemesanan`
+-- Indeks untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`id_pemesanan`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pemesanan`
+-- AUTO_INCREMENT untuk tabel `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id_pemesanan` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pemesanan` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_produk` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

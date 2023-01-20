@@ -65,9 +65,7 @@ if (mysqli_connect_errno()) {
         <div class="container rounded-lg mb-4">
             <ul class="nav sticky rounded-lg bg-cyan-500 text-light hover:bg-orange-700 hover:text-orange-500 font-semibold text-xl justify-content-center">
                 <p>
-                    <marquee behavior="" direction="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ab
-                        nesciunt temporibus doloremque, doloribus sapiente optio! Esse corrupti, odit quod, numquam hic
-                        repellat placeat vitae sapiente earum inventore ab rerum.</marquee>
+                    <marquee behavior="" direction="">Selamat Datang di Hans Ban. Silahkan memilih jika ingin membeli. </marquee>
 
                 </p>
             </ul>
